@@ -1,0 +1,31 @@
+.nav {
+	@extend %container-flex;
+	padding-left: 0;
+	margin: auto 0;
+	@include mq(small) {
+		justify-content: center;
+	}
+	
+	&bar {
+		@extend %nav-bar;
+	}
+	
+	@include e(item) {
+		list-style: none;
+	}
+	
+	@include e(link) {
+		@extend %nav-item-link;
+		&:hover {
+			@extend %nav-item-on;
+		}
+		&:active {
+			@extend %nav-item-on;
+		}
+	}	
+	& .selected {
+		@extend %nav-item-on;
+	}
+}
+
+

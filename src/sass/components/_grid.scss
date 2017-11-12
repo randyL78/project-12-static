@@ -1,0 +1,56 @@
+// ==========================================================================
+// 		Grid system
+// ==========================================================================
+
+// Center elements
+
+.centered {
+	@include mq(medium) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+// Create grid rows
+.grid {
+	&__row {		// .grid__row
+		@include pad-top-bottom(15px);
+		@include container-flex-between;
+		@extend %clearfix;
+		@extend .centered;
+		width: 100%;
+
+		&--12 {		// .grid__row--12
+			@include pad-left-right(5px);
+			@include container-flex-between;
+		}
+		// Set max-width for grid container
+		@include mq(large) {
+			max-width: $g-cont-max-w;
+		}
+	}
+}
+
+
+
+// create grid columns
+.grid__col {
+	@include mq(medium) {
+		@include g-columns;
+	}
+}
+
+// Column styles
+	// Select any class beginning with grid__col--
+[class^="grid__col--"] {
+	border-radius: $border--rounded-corners;
+	padding: em(8px) em(10px);
+	@include margin-top-bottom(em(5px));
+	@include mq(medium) { 
+		@include doubly(percentage($g-gutter-width / $context));
+		min-height: 1px;
+	}
+}
+
+

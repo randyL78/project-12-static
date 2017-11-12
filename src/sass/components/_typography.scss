@@ -1,0 +1,68 @@
+//////////////////////////////////
+//			Typography  						//
+//////////////////////////////////
+
+// ============ Import if Google Fonts URL is defined ==============
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// =============== Base Container Typography =====
+// Base container
+.container {
+	position: relative;
+	top: -1em;
+	padding-top: em(40px);
+	color: palette(grey);
+	font-size: $base__font-size;
+	font-family: $font-family--primary;
+	line-height: ($base__line-height * $base__font-size);
+	background-color: $color-primary;
+	background-image: url(../images/gemini.svg);
+	background-size: 35px 35px;
+}
+
+
+
+// =============== Headlines ======================
+
+.headline {
+	&--primary {
+		@extend %hdln-prim;
+
+	}
+	&--secondary {
+		@extend %hdln-sec;
+	}
+}
+
+// =============== Links =========================
+
+.link {
+	font-weight: $font-weight--bold;
+	color: $color-font-white;
+	text-decoration: none; 	//  remove underlines
+}
+
+// =============== Blockquotes ====================
+
+.blockquote {
+	@include margin-left-right(30px, 35px);
+	margin-top: 30px;
+	padding-left: 30px;
+	font-weight: $font-weight--medium;
+	font-style: italic;
+ 	font-size: em(25px);
+	line-height: 1.4em;
+	border-left: 10px solid $color-primary;
+	border-radius: 10px;
+	@include mq(medium) {
+		max-width: 700px;
+	}
+}
+
+.card {
+	max-width: 1050px;
+}
+
