@@ -1,0 +1,50 @@
+.image {
+	@include m(profile) {
+		position:fixed;
+		left: calc(50vw - 15vh);
+		width: (45vh * .6667);
+		height: 45vh;
+		bottom: em(45px);
+		
+		@include mq(small) {
+			bottom: em(95px);
+			left: auto;
+			right: 5vw;
+			width: (55vh * .6667);
+			height: 55vh;			
+		}
+		
+		@include mq(medium) {
+			right: 10vw;
+			bottom: em(45px);		
+			width: (65vh * .6667);
+			height: 65vh;			
+		}		
+
+		@include mq(large) {
+			width: (85vh * .6667);
+			height: 85vh;	
+		}
+	}
+}
+
+#logo {
+	position:fixed;
+	left: calc(50vw - 15vh);
+	width: (45vh * .6667);
+	top: 5vh;
+	@include mq(small) {
+		top: 0;
+		left: 5vw;
+		width: (55vh * .6667);
+	}
+	@include mq(medium) {
+		left: 10vw;
+		top: 15vh;		
+	}
+	@include mq(large) { 
+		width: (85vh * .6667);
+	}
+}
+
+

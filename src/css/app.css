@@ -1,5 +1,6 @@
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Lobster");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -174,7 +175,7 @@ a {
 
 .headline--primary {
   color: #fff9fd;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2em;
   margin-top: 0.27778em;
   margin-bottom: 0.27778em; }
@@ -189,6 +190,8 @@ a {
   margin-bottom: 15px; }
 
 .navbar {
+  padding-left: 0.83333em;
+  padding-right: 0.83333em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,7 +213,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   text-decoration: none;
-  font-weight: 400;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   color: #c0bfbf;
   font-size: 1.11111em;
   display: block;
@@ -224,7 +228,7 @@ a {
       display: inline-block; } }
 
 .nav__link:hover, .nav__link:active, .nav .selected {
-  font-weight: 400;
+  font-weight: 700;
   background-color: #83668C;
   color: #fff9fd; }
 
@@ -290,18 +294,6 @@ a {
       [class^="grid__col--"] + [class^="grid__col--"] {
         margin-left: 2%; } }
 
-.container {
-  position: relative;
-  top: -1em;
-  padding-top: 2.22222em;
-  color: palette(grey);
-  font-size: 18px;
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 27px;
-  background-color: #83668C;
-  background-image: url(../images/gemini.svg);
-  background-size: 35px 35px; }
-
 .link {
   font-weight: 700;
   color: #fff9fd;
@@ -333,13 +325,27 @@ a {
   background-size: cover; }
 
 .nav {
+  display: none;
   padding-left: 0;
   margin: auto 0; }
   @media (min-width: 480px) {
     .nav {
+      display: flex;
       justify-content: center; } }
   .nav__item {
     list-style: none; }
+
+.container {
+  position: relative;
+  top: -1em;
+  padding-top: 2.22222em;
+  color: palette(grey);
+  font-size: 18px;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 27px;
+  background-color: #83668C;
+  background-image: url(../images/gemini.svg);
+  background-size: 35px 35px; }
 
 .compScreen {
   margin-left: auto;
@@ -356,3 +362,45 @@ a {
   box-shadow: 0 0 3vw 1vw #000;
   opacity: 0.5;
   transform: translateY(-2.5vw); }
+
+.image--profile {
+  position: fixed;
+  left: calc(50vw - 15vh);
+  width: 30.0015vh;
+  height: 45vh;
+  bottom: 2.5em; }
+  @media (min-width: 480px) {
+    .image--profile {
+      bottom: 5.27778em;
+      left: auto;
+      right: 5vw;
+      width: 36.6685vh;
+      height: 55vh; } }
+  @media (min-width: 768px) {
+    .image--profile {
+      right: 10vw;
+      bottom: 2.5em;
+      width: 43.3355vh;
+      height: 65vh; } }
+  @media (min-width: 1024px) {
+    .image--profile {
+      width: 56.6695vh;
+      height: 85vh; } }
+
+#logo {
+  position: fixed;
+  left: calc(50vw - 15vh);
+  width: 30.0015vh;
+  top: 5vh; }
+  @media (min-width: 480px) {
+    #logo {
+      top: 0;
+      left: 5vw;
+      width: 36.6685vh; } }
+  @media (min-width: 768px) {
+    #logo {
+      left: 10vw;
+      top: 15vh; } }
+  @media (min-width: 1024px) {
+    #logo {
+      width: 56.6695vh; } }

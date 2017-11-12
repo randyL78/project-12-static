@@ -1,8 +1,10 @@
 .nav {
 	@extend %container-flex;
+	display: none;
 	padding-left: 0;
 	margin: auto 0;
 	@include mq(small) {
+		display: flex;
 		justify-content: center;
 	}
 	

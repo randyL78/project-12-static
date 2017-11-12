@@ -4,23 +4,12 @@
 
 // ============ Import if Google Fonts URL is defined ==============
 
-@if variable-exists(font-url--google) {
-  @import url($font-url--google);
+@if variable-exists(font-url--primary) {
+  @import url($font-url--primary);
 }
 
-// =============== Base Container Typography =====
-// Base container
-.container {
-	position: relative;
-	top: -1em;
-	padding-top: em(40px);
-	color: palette(grey);
-	font-size: $base__font-size;
-	font-family: $font-family--primary;
-	line-height: ($base__line-height * $base__font-size);
-	background-color: $color-primary;
-	background-image: url(../images/gemini.svg);
-	background-size: 35px 35px;
+@if variable-exists(font-url--accent) {
+  @import url($font-url--accent);
 }
 
 

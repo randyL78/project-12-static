@@ -79,9 +79,10 @@
 
 // =============== Headlines ====================
 
-%hdln-prim {
+%hdln-prim {	
 	color: $color-font-white;
- 	font-weight: $font-weight--light;
+//	font-family: $font-family--accent;
+	font-weight: $font-weight--medium;
   font-size: em(36px);
 	@include margin-top-bottom(em(5px));
 	@include mq(medium) {
@@ -100,6 +101,7 @@
 
 // =============== Nav Items ====================
 %nav-bar {
+	@include pad-left-right(em(15px));
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -120,7 +122,8 @@
 %nav-item-link {
 	@include margin-left-right(auto);
 	text-decoration: none;
-	font-weight: $font-weight--medium;
+	font-family: $font-family--primary;
+	font-weight: $font-weight--bold;
 	@extend %center-align;
 	color: $color-font-lighter;
 	font-size: em(20px);
@@ -136,7 +139,7 @@
 }
 
 %nav-item-on {
-	font-weight: $font-weight--medium;
+	font-weight: $font-weight--bold;
 	background-color: $color-primary;
 	color: $white;
  	
