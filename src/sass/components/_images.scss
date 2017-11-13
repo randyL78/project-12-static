@@ -37,7 +37,7 @@
 // Keyframes declarations
 //========================
 
-@keyframes grow {
+@keyframes appear-grow {
 	0% {
 		transform: scale(0);
 	}
@@ -55,13 +55,13 @@
 		opacity: 0;
 	}
 	70% {
-		opacity: 0.2;
+		opacity: 0.25;
 	}
 	90% {
-		opacity: 0.16;
+		opacity: 0.21;
 	}
 	100% {
-		opacity: 0.18;
+		opacity: 0.23;
 	}
 }
 
@@ -99,4 +99,11 @@
 	}
 }
 
+@for $i from 1 through 10 {
+	.star#{$i} {
+		fill:url(#star#{$i}--grad);
+	}
+}
+
+				
 

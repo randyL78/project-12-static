@@ -389,7 +389,7 @@ a {
       width: 56.6695vh;
       height: 85vh; } }
 
-@keyframes grow {
+@keyframes appear-grow {
   0% {
     transform: scale(0); }
   40% {
@@ -400,11 +400,11 @@ a {
   0% {
     opacity: 0; }
   70% {
-    opacity: 0.2; }
+    opacity: 0.25; }
   90% {
-    opacity: 0.16; }
+    opacity: 0.21; }
   100% {
-    opacity: 0.18; } }
+    opacity: 0.23; } }
 #logo {
   position: fixed;
   left: calc(50vw - 15vh);
@@ -430,3 +430,33 @@ a {
   transform-origin: 50% 50%;
   animation: appear 1.0s ease-in-out backwards;
   animation-delay: .5s; }
+
+.star1 {
+  fill: url(#star1--grad); }
+
+.star2 {
+  fill: url(#star2--grad); }
+
+.star3 {
+  fill: url(#star3--grad); }
+
+.star4 {
+  fill: url(#star4--grad); }
+
+.star5 {
+  fill: url(#star5--grad); }
+
+.star6 {
+  fill: url(#star6--grad); }
+
+.star7 {
+  fill: url(#star7--grad); }
+
+.star8 {
+  fill: url(#star8--grad); }
+
+.star9 {
+  fill: url(#star9--grad); }
+
+.star10 {
+  fill: url(#star10--grad); }
