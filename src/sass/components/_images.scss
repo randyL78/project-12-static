@@ -1,3 +1,6 @@
+// =======================
+// profile image
+//========================
 .image {
 	@include m(profile) {
 		position:fixed;
@@ -22,12 +25,50 @@
 		}		
 
 		@include mq(large) {
+			max-width: 50vw;		
+			max-height: (50vw * 1.5);
 			width: (85vh * .6667);
 			height: 85vh;	
 		}
 	}
 }
 
+// =======================
+// Keyframes declarations
+//========================
+
+@keyframes grow {
+	0% {
+		transform: scale(0);
+	}
+	40% {
+		transform: scale(1.05);		
+	}
+	80% {		
+		transform: scale(0.95);
+		
+	}	
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0.2;
+	}
+	90% {
+		opacity: 0.16;
+	}
+	100% {
+		opacity: 0.18;
+	}
+}
+
+
+// =======================
+// Logo svg
+//========================
 #logo {
 	position:fixed;
 	left: calc(50vw - 15vh);
@@ -43,7 +84,18 @@
 		top: 15vh;		
 	}
 	@include mq(large) { 
+		max-width: 50vw;
 		width: (85vh * .6667);
+	}
+}
+
+.logo {
+	@include m(main) {
+		opacity:0.23;
+		fill:#FFFFFF;
+		transform-origin: 50% 50%;
+		animation: appear 1.0s ease-in-out backwards;
+		animation-delay: .5s;
 	}
 }
 
