@@ -406,6 +406,7 @@ a {
   100% {
     opacity: 0.23; } }
 #logo {
+  transform-origin: 50% 50%;
   position: fixed;
   left: calc(50vw - 15vh);
   width: 30.0015vh;
@@ -429,34 +430,54 @@ a {
   fill: #FFFFFF;
   transform-origin: 50% 50%;
   animation: appear 1.0s ease-in-out backwards;
-  animation-delay: .5s; }
+  animation-delay: 3.5s; }
 
 .star1 {
-  fill: url(#star1--grad); }
+  fill: url(#star1--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 0.25s; }
 
 .star2 {
-  fill: url(#star2--grad); }
+  fill: url(#star2--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 0.5s; }
 
 .star3 {
-  fill: url(#star3--grad); }
+  fill: url(#star3--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 0.75s; }
 
 .star4 {
-  fill: url(#star4--grad); }
+  fill: url(#star4--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 1s; }
 
 .star5 {
-  fill: url(#star5--grad); }
+  fill: url(#star5--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 1.25s; }
 
 .star6 {
-  fill: url(#star6--grad); }
+  fill: url(#star6--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 1.5s; }
 
 .star7 {
-  fill: url(#star7--grad); }
+  fill: url(#star7--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 1.75s; }
 
 .star8 {
-  fill: url(#star8--grad); }
+  fill: url(#star8--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 2s; }
 
 .star9 {
-  fill: url(#star9--grad); }
+  fill: url(#star9--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 2.25s; }
 
 .star10 {
-  fill: url(#star10--grad); }
+  fill: url(#star10--grad);
+  animation: appear-grow 1.0s ease-in-out backwards;
+  animation-delay: 2.5s; }
