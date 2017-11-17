@@ -1,4 +1,4 @@
-.nav {
+.nav { 		// ul
 	@extend %container-flex;
 	display: none;
 	padding-left: 0;
@@ -7,16 +7,19 @@
 		display: flex;
 		justify-content: center;
 	}
+	@include mq(medium) {
+		order: 2;
+	}
 	
-	&bar {
+	&bar {  // nav element
 		@extend %nav-bar;
 	}
 	
-	@include e(item) {
+	@include e(item) {  // li
 		list-style: none;
 	}
 	
-	@include e(link) {
+	@include e(link) {  // a
 		@extend %nav-item-link;
 		&:hover {
 			@extend %nav-item-on;
@@ -30,4 +33,29 @@
 	}
 }
 
+.sticky {
+	position: fixed;
+	top: 0;
+	bottom: auto;
+}
+
+// button to scroll down to portfolio
+#button--scroll {
+	background-color: transparent;
+	color: $white;
+	@include pad-left-right;
+	border: none;
+	outline: none;
+	&:hover {
+		background-color: $color-primary;
+	}
+	&:active {
+		background-color: $color-shadow;
+	}
+	
+}
+
+.flip {
+	transform: rotate(180deg);
+}
 

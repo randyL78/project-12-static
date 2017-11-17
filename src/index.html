@@ -91,8 +91,10 @@
 				<li class="nav__item"><a href="#" class="nav__link">Experience</a></li>
 				<li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
 			</ul>
-		</nav>		
-		<div class="container"> 
+			<button id="button--scroll">V</button>
+		</nav>
+		
+		<div class="container" id="portfolio"> 
 			<div class="compScreen">
 				<!--		computer screen svg-->
 				<svg version="1.1" id="screen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -101,6 +103,7 @@
 					.screen0{fill:url(#SVGSCREEN_3_);}
 					.screen1{opacity:0.22;fill:url(#SVGSCREEN_4_);}
 					.screen2{fill:url(#SVGSCREEN_5_);}
+					.cls-2{fill:url(#radial-gradient);}
 				</style>
 				<g>
 					<defs>
@@ -116,6 +119,11 @@
 					</g>
 				</g>
 				<g>
+					<radialGradient id="radial-gradient" cx="438.5" cy="764.9" r="264.3" gradientTransform="matrix(.98 0 0 .08 -34.25 521.21)" gradientUnits="userSpaceOnUse">
+						<stop offset="0" stop-color="#1a1a1a"/>
+						<stop offset=".46" stop-opacity=".6"/>
+						<stop offset="1" stop-opacity=".1"/>
+					</radialGradient>
 					<linearGradient id="SVGSCREEN_3_" gradientUnits="userSpaceOnUse" x1="35" y1="446" x2="766" y2="446">
 						<stop  offset="0.1564" style="stop-color:#9C9C9C"/>
 						<stop  offset="0.4077" style="stop-color:#858585"/>
@@ -138,13 +146,13 @@
 					<stop  offset="0.6692" style="stop-color:#F0F3F1"/>
 					<stop  offset="1" style="stop-color:#222222"/>
 				</linearGradient>
+				<ellipse class="cls-2" cx="400" cy="580" rx="365.5" ry="18.2"/>
 				<path class="screen2" d="M491.1,555.7c-5.3-3.3-14.9-10.4-21.4-23.2c-13.6-26.8-2.3-54.9-0.8-58.5c-22.7,0-45.5,0-68.2,0
 					c-0.1,0-0.2,0-0.3,0c-22.7,0-45.5,0-68.2,0c1.5,3.6,12.8,31.8-0.8,58.5c-6.6,12.9-16.1,19.9-21.4,23.2
 					c-34.9,9.4-52.1,16.5-51.6,21.5c0.4,4,12.1,6.5,34.9,7.7c28,0,56.1,0,84.1,0c7.7,0,15.3,0,23,0h0.3c9.7,0,19.4,0,29.1,0
 					c26,0,52,0,78,0c22.9-1.2,34.5-3.8,34.9-7.7C543.2,572.3,526,565.1,491.1,555.7z"/>
 				</svg>
 				<!--		computer screen svg-->
-				<div class="shadow"></div>  <!-- add shadow under computer screen -->
 		</div>
 	</div>
 </body>

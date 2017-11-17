@@ -36,11 +36,12 @@ $grey		: #676666;
 //			-color names chosen using "name that color" @ http://chir.ag/projects/name-that-color
 
 $trendy-pink	: #83668C;
+$violet 			: #240A40;
 
 
 //		Colors by usage
 $color-primary		: $trendy-pink;
-$color-shadow			: darken($trendy-pink, 22%);
+$color-shadow			: $violet;
 
 
 

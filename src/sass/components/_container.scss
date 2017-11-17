@@ -1,7 +1,7 @@
 // Base container
 .container {
+	min-height: 100vh;
 	position: relative;
-	top: -1em;
 	padding-top: em(40px);
 	color: palette(grey);
 	font-size: $base__font-size;
