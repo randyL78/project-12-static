@@ -10,7 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
 //				Utility Functions
 // ************************************************************	
 	
-	
+	function stringToNumber (str, remove = '') {
+		if (remove !== '') {
+			str.replace(remove, '');
+		}
+		try {
+			return parseInt(str);
+		} catch(err) {
+			console.log(err.message);
+			console.log("Unable to convert string to number");
+			return NaN;	
+		}
+		
+	}
 	
 	
 	
@@ -32,8 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				portfolio.scrollIntoView();		
 				scrollButton.classList.add("flip");
 		}
-		scrolled = !scrolled;
-		
+		scrolled = !scrolled;		
 	};
 	
 	
@@ -41,11 +52,24 @@ document.addEventListener('DOMContentLoaded', function () {
 	const navBar = document.querySelector(".navbar");
 
 	window.onscroll = function() {
-			console.log(navBar.offsetTop + ", " + portfolio.offsetTop + ", " + window.pageYOffset + ", " + (portfolio.offsetTop - window.getComputedStyle(navBar).height));
+		
+		// get the height
+		let navHeight = window.getComputedStyle(navBar).height;
+		navHeight = stringToNumber(navHeight, 'px');
+		
 		if (window.pageYOffset >= navBar.offsetTop && !navBar.classList.contains("sticky")) {
 			navBar.classList.add("sticky");
-		} else if (window.pageYOffset <= (portfolio.offsetTop - window.getComputedStyle(navBar).height)) {
+			scrolled = true;				
+			if (!scrollButton.classList.contains("flip")) {
+				scrollButton.classList.add("flip");			
+			}
 
+		} else if (window.pageYOffset <= (portfolio.offsetTop - navHeight)) {
+			navBar.classList.remove("sticky");		
+			scrolled = false;		
+			if (scrollButton.classList.contains("flip")) {
+				scrollButton.classList.remove("flip");			
+			}
 		}
 		
 	};
