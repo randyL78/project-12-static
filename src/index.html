@@ -13,7 +13,19 @@
 </head>
 
 <body>
+<!--				Mobile navigation menu-->
+			<nav class="navbar--mobile">
+				<button id="button--menu"></button>
+				<ul class="nav--mobile hidden">
+					<li class="nav__item"><a href="index.html" class="nav__link selected">Home</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Experience</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+				</ul>
+			
+				
+			</nav>
 		<header class="landing">
+
 			<!-- Very large inline logo svg-->
 			<svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
 <!--				Gemini Symbol-->
@@ -83,7 +95,10 @@
 
 		<img alt="Randy Layne exuding confidence" src="images/randy-layne.png" class="image--profile">
 		</header>
-		<nav class="navbar">
+		
+		
+<!--		Navigation-->
+		<nav class="navbar" id="main-nav">
 			<h1 class="headline--primary">Randy Layne's Portfolio</h1>
 			<ul class="nav">
 				<li class="nav__item">
@@ -93,7 +108,8 @@
 			</ul>
 			<button id="button--scroll">V</button>
 		</nav>
-		
+	
+<!--		Main Content	-->
 		<div class="container" id="portfolio"> 
 			<div class="compScreen">
 				<!--		computer screen svg-->
@@ -155,6 +171,6 @@
 				<!--		computer screen svg-->
 		</div>
 	</div>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
-<script type="text/javascript" src="js/app.js"></script>
 </html>

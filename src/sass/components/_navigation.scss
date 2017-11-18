@@ -1,8 +1,8 @@
 .nav { 		// ul
-	@extend %container-flex;
+	@extend %nav-ul;
 	display: none;
-	padding-left: 0;
-	margin: auto 0;
+
+	
 	@include mq(small) {
 		display: flex;
 		justify-content: center;
@@ -12,9 +12,26 @@
 		order: 2;
 	}
 	
+	@include m(mobile) { // mobile ul
+		@extend %nav-ul;
+		@include mq(small) {
+			display: none;
+		}
+	}
+	
 	&bar {  // nav element
 		@extend %nav-bar;
+		background: setColor(primary, dark);		
+		z-index: map-get($z-index, menu);
+		bottom: 0;		
 		box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;
+		@include m(mobile) { // mobile nav element			
+			@extend %nav-bar;	
+			background: $color-shadow;
+			@include mq(small) {
+				display: none;
+			}
+		}
 	}
 	
 	@include e(item) {  // li
@@ -44,22 +61,27 @@
 }
 
 // button to scroll down to portfolio
-#button--scroll {
-	background-color: transparent;
-	color: $white;
-	@include pad-left-right;
-	border: none;
-	outline: none;
-	&:hover {
-		@extend %nav-item-on;
+#button{
+	@include m(scroll) {
+		@extend %button-navs;
+		&:active {
+			background-color: $color-shadow;
+		}
+	}	
+	@include m(menu) {
+		@extend %button-navs;
+		background: url(../images/icon-menu.svg) center no-repeat;
+				&:active {
+			background-color: setColor(primary, dark);
+		}
 	}
-	&:active {
-		background-color: $color-shadow;
-	}
-	
 }
 
 .flip {
 	transform: rotate(180deg);
+}
+
+.hidden {
+	display: none;
 }
 

@@ -41,112 +41,6 @@
 	width: 1px;
 }
 
-// =============== Buttons ======================
-
-%button {
-	@extend %center-align;
- 	@include pad-top-bottom(15px);
-	font-weight: $font-weight--bold;
-	font-size: em(17px);
-	border: 0;
-	color: $white;
-	width: 100%; 
-	border-radius: $border--rounded-corners;
-	cursor: pointer;
-}
-
-%button-navs {
-	background-color: $color-shadow;
-	opacity: .75;
-	transition: opacity .3s;
-	cursor: pointer;
-	min-height: 45px;
-}
-
-// =============== Links ========================
-
-%links {
-	text-decoration: none;  //	Remove Underlines
-	color: $color-shadow;
-}
-
-// =============== Images =======================
-
-%img--center {
-	display: block;
-	@include margin-left-right(auto);
-}
-
-// =============== Headlines ====================
-
-%hdln-prim {	
-	color: $color-font-white;
-//	font-family: $font-family--accent;
-	font-weight: $font-weight--medium;
-  font-size: em(36px);
-	@include margin-top-bottom(em(5px));
-	@include mq(medium) {
-		text-align: left;
-		padding-left: 20px;
-	}
-
-}
-
-%hdln-sec {
-  color: setColor(grey, medium);
-  font-weight: $font-weight--light;
-	font-size: em(26px);
-	margin-bottom: 15px;
-}
-
-// =============== Nav Items ====================
-
-%nav-bar {
-	@include pad-left-right(em(15px));
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;	
-	z-index: map-get($z-index, menu);
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: setColor(primary, dark);		
-	@include mq(medium) {	
-		flex-direction: row;
-		justify-content: space-between;
-		align-content: center;
-		@include pad-left-right;
-	}
-}
-
-%nav-item-link {
-	@include margin-left-right(auto);
-	text-decoration: none;
-	font-family: $font-family--primary;
-	font-weight: $font-weight--bold;
-	@extend %center-align;
-	color: $color-font-lighter;
-	font-size: em(20px);
-	display: block;
-	padding: em(12px) em(18px);
-	border-radius: $border--rounded-corners;
-	@include mq(medium) {
-		margin-left: em(5px);
-	}
-	@include mq(large) {
-		display: inline-block;
-	}
-}
-
-%nav-item-on {
-	font-weight: $font-weight--bold;
-	background-color: $color-primary;
-	color: $white;
-	box-shadow: 0 0 5px 1px setColor(primary, xx-light);
-	transition: background-color $trns--duration-fast;
-}
-
 //	============= Flex Box ========================
 
 %container-flex {
@@ -170,6 +64,126 @@
 	flex-direction: column;
 	
 }
+
+// =============== Buttons ======================
+
+%button {
+	@extend %center-align;
+ 	@include pad-top-bottom(15px);
+	font-weight: $font-weight--bold;
+	font-size: em(17px);
+	border: 0;
+	color: $white;
+	width: 100%; 
+	border-radius: $border--rounded-corners;
+	cursor: pointer;
+}
+
+%button-navs {
+	background-color: transparent;
+	cursor: pointer;
+	min-height: 35px;
+	color: $white;
+	@include pad-left-right;
+	border: none;
+	outline: none;
+	&:hover {
+		@extend %nav-item-on;
+	}
+}
+
+
+
+// =============== Links ========================
+
+%links {
+	text-decoration: none;  //	Remove Underlines
+	color: $color-shadow;
+}
+
+// =============== Images =======================
+
+%img--center {
+	display: block;
+	@include margin-left-right(auto);
+}
+
+// =============== Headlines ====================
+
+%hdln-prim {	
+	@include pad-left-right(em(15px));
+	color: $color-font-white;
+//	font-family: $font-family--accent;
+	font-weight: $font-weight--medium;
+  font-size: em(36px);
+	@include margin-top-bottom(em(5px));
+	@include mq(medium) {
+		text-align: left;
+		padding-left: 20px;
+	}
+
+}
+
+%hdln-sec {
+  color: setColor(grey, medium);
+  font-weight: $font-weight--light;
+	font-size: em(26px);
+	margin-bottom: 15px;
+}
+
+// =============== Nav Items ====================
+
+%nav-bar {
+	position: absolute;
+	z-index: map-get($z-index, menu);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;	
+	width: 100%;
+	@include mq(medium) {	
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+		@include pad-left-right;
+	}
+}
+
+%nav-ul {
+	@extend %container-flex;
+	padding-left: 0;
+	margin: auto 0;
+}
+
+%nav-item-link {
+	@include margin-left-right(auto);
+	text-decoration: none;
+	font-family: $font-family--primary;
+	font-weight: $font-weight--bold;
+	@extend %center-align;
+	color: $color-font-lighter;
+	font-size: em(20px);
+	display: block;
+	padding: em(12px) em(18px);
+	border-radius: $border--rounded-corners;
+	@include mq(small) {
+		margin-left: em(5px);
+		margin-bottom: em(5px);
+	}
+	@include mq(large) {
+		display: inline-block;
+	}
+}
+
+%nav-item-on {
+	font-weight: $font-weight--bold;
+	background-color: $color-primary;
+	color: $white;
+	box-shadow: 0 0 5px 1px setColor(primary, xx-light);
+	transition: background-color $trns--duration-fast;
+}
+
+
 
 
 

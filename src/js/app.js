@@ -21,15 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
 			console.log(err.message);
 			console.log("Unable to convert string to number");
 			return NaN;	
-		}
-		
+		}	
 	}
-	
-	
 	
 // ************************************************************
 //				Navigation
 // ************************************************************
+	// ======= mobile menu
+	const mobileMenu = document.getElementById("button--menu");
+	const mobileNav = document.querySelector(".nav--mobile");
+	
+	mobileMenu.onclick = () => {
+		if (mobileNav.classList.contains("hidden")) {
+			mobileNav.classList.remove("hidden");
+		} else {
+			mobileNav.classList.add("hidden");
+		}
+	};
 
 	// ======= handle scroll button for portfolio
 	const scrollButton = document.getElementById("button--scroll");
@@ -50,12 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 	
 	// ======= sticky nav
-	const navBar = document.querySelector(".navbar");
+	const navBar = document.querySelector("#main-nav");
 
 	window.onscroll = () => {
 		stickyScroller();
 	};
-	
 	
 	function stickyScroller () {
 		// get the height of the navbar and convert it to a number

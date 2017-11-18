@@ -7,7 +7,7 @@
 		left: calc(50vw - 15vh);
 		width: (45vh * .6667);
 		height: 45vh;
-		bottom: em(45px);
+		bottom: em(65px);
 		
 		@include mq(small) {
 			bottom: em(95px);
@@ -73,7 +73,7 @@
 	position:fixed;
 	left: calc(50vw - 15vh);
 	width: (45vh * .6667);
-	top: 5vh;
+	top: 8vh;
 	@include mq(small) {
 		top: 0;
 		left: 5vw;
