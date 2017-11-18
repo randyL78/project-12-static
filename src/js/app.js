@@ -27,9 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
 // ************************************************************
 //				Navigation
 // ************************************************************
+	// find the computed height for where the nav needs to start "sticking"
+	function getStickyPoint() {
+		// get the height of the navbar and convert it to a number
+		let navHeight = window.getComputedStyle(navBar).height;
+		navHeight = stringToNumber(navHeight, 'px');
+		
+		return portfolio.offsetTop - navHeight;
+	}
+	
 	// ======= mobile menu
 	const mobileMenu = document.getElementById("button--menu");
 	const mobileNav = document.querySelector(".nav--mobile");
+	const navBar = document.querySelector("#main-nav");
 	
 	mobileMenu.onclick = () => {
 		if (mobileNav.classList.contains("hidden")) {
@@ -50,24 +60,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			window.scrollTo(0,0);
 			scrollButton.classList.remove("flip");
 		} else {
-				portfolio.scrollIntoView();		
-				scrollButton.classList.add("flip");
+			let stickyHeight = getStickyPoint();
+			window.scrollTo(0, stickyHeight);
+			scrollButton.classList.add("flip");
 		}
 		scrolled = !scrolled;		
 	};
 	
 	
 	// ======= sticky nav
-	const navBar = document.querySelector("#main-nav");
 
 	window.onscroll = () => {
 		stickyScroller();
 	};
 	
 	function stickyScroller () {
-		// get the height of the navbar and convert it to a number
-		let navHeight = window.getComputedStyle(navBar).height;
-		navHeight = stringToNumber(navHeight, 'px');
+		let stickyHeight = getStickyPoint();
 		
 		if (window.pageYOffset >= navBar.offsetTop && !navBar.classList.contains("sticky")) {
 			navBar.classList.add("sticky");
@@ -76,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				scrollButton.classList.add("flip");			
 			}
 
-		} else if (window.pageYOffset <= (portfolio.offsetTop - navHeight)) {
+		} else if (window.pageYOffset <= stickyHeight) {
 			navBar.classList.remove("sticky");		
 			scrolled = false;		
 			if (scrollButton.classList.contains("flip")) {
