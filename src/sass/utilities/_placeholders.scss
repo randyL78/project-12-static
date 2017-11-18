@@ -100,6 +100,7 @@
 }
 
 // =============== Nav Items ====================
+
 %nav-bar {
 	@include pad-left-right(em(15px));
 	display: flex;
@@ -110,7 +111,7 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background: setColor(primary, x-dark);		
+	background: setColor(primary, dark);		
 	@include mq(medium) {	
 		flex-direction: row;
 		justify-content: space-between;
@@ -142,7 +143,8 @@
 	font-weight: $font-weight--bold;
 	background-color: $color-primary;
 	color: $white;
- 	
+	box-shadow: 0 0 5px 1px setColor(primary, xx-light);
+	transition: background-color $trns--duration-fast;
 }
 
 //	============= Flex Box ========================

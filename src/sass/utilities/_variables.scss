@@ -54,7 +54,8 @@ $color-palettes: (
 		light    : lighten($color-primary, 12%),
 		base     : $color-primary,
 		dark     : darken($color-primary, 8%),
-		x-dark   : darken($color-primary, 16%)
+		x-dark   : darken($color-primary, 16%),
+		xx-dark   : darken($color-primary, 32%)
     ),
 	grey: (
 		xx-light : lighten($grey, 43%),

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //				Utility Functions
 // ************************************************************	
 	
+	// Convert a string to a number with optional replacement of substring
 	function stringToNumber (str, remove = '') {
 		if (remove !== '') {
 			str.replace(remove, '');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //				Navigation
 // ************************************************************
 
-	// handle scroll button for portfolio
+	// ======= handle scroll button for portfolio
 	const scrollButton = document.getElementById("button--scroll");
 	const portfolio = document.getElementById("portfolio");
 	let scrolled = false;
@@ -48,12 +49,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	};
 	
 	
-	// sticky nav
+	// ======= sticky nav
 	const navBar = document.querySelector(".navbar");
 
-	window.onscroll = function() {
-		
-		// get the height
+	window.onscroll = () => {
+		stickyScroller();
+	};
+	
+	
+	function stickyScroller () {
+		// get the height of the navbar and convert it to a number
 		let navHeight = window.getComputedStyle(navBar).height;
 		navHeight = stringToNumber(navHeight, 'px');
 		
@@ -71,6 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
 				scrollButton.classList.remove("flip");			
 			}
 		}
+		
+	}
+	
+	// ========= reset scroller/nav positions after user resizes window 
+	let resizeTimer;
+	
+	window.onresize = () => {
+		// for performance reasons add a delay before firing
+		// reset existing timeout first to avoid multiple fires
+		clearTimeout(resizeTimer);
+		
+		// initialize timeout
+		resizeTimer = setTimeout( () => {stickyScroller();}, 50); 
 		
 	};
 	

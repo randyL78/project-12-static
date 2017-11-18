@@ -6,6 +6,7 @@
 	@include mq(small) {
 		display: flex;
 		justify-content: center;
+
 	}
 	@include mq(medium) {
 		order: 2;
@@ -13,6 +14,7 @@
 	
 	&bar {  // nav element
 		@extend %nav-bar;
+		box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;
 	}
 	
 	@include e(item) {  // li
@@ -37,6 +39,8 @@
 	position: fixed;
 	top: 0;
 	bottom: auto;
+//	box-shadow: 0 0 45px inset #000;
+
 }
 
 // button to scroll down to portfolio
@@ -47,7 +51,7 @@
 	border: none;
 	outline: none;
 	&:hover {
-		background-color: $color-primary;
+		@extend %nav-item-on;
 	}
 	&:active {
 		background-color: $color-shadow;
