@@ -522,3 +522,9 @@ a {
   fill: url(#star10--grad);
   animation: appear-grow 1.0s ease-in-out backwards;
   animation-delay: 2.5s; }
+
+footer {
+  padding-left: 0.83333em;
+  min-height: 1.94444em;
+  background: #240A40;
+  color: #fff9fd; }
