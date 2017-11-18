@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 	
 	// ======= sticky nav
-
 	window.onscroll = () => {
 		stickyScroller();
 	};

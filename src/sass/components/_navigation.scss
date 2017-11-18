@@ -14,6 +14,11 @@
 	
 	@include m(mobile) { // mobile ul
 		@extend %nav-ul;
+		width: 100%;
+		position: absolute;
+		top: 35px;
+		background: $color-shadow;
+		transition: transform .4s ease-in;
 		@include mq(small) {
 			display: none;
 		}
@@ -28,6 +33,7 @@
 		@include m(mobile) { // mobile nav element			
 			@extend %nav-bar;	
 			background: $color-shadow;
+
 			@include mq(small) {
 				display: none;
 			}
@@ -70,7 +76,8 @@
 	}	
 	@include m(menu) {
 		@extend %button-navs;
-		background: url(../images/icon-menu.svg) center no-repeat;
+		background: url(../images/icon-menu.svg) center no-repeat $color-shadow;
+		z-index: map-get($z-index, menu);
 				&:active {
 			background-color: setColor(primary, dark);
 		}
@@ -82,6 +89,7 @@
 }
 
 .hidden {
-	display: none;
+	transform: translateY(-160px);
+//	display: none;
 }
 
