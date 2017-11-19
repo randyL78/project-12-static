@@ -8,8 +8,8 @@
   @import url($font-url--primary);
 }
 
-@if variable-exists(font-url--accent) {
-  @import url($font-url--accent);
+@if variable-exists(font-url--digital) {
+  @import url($font-url--digital);
 }
 
 
@@ -55,3 +55,16 @@
 	max-width: 1050px;
 }
 
+// =============== Digital look ===================
+.digital {
+	@extend %digital;
+	@include doubly;
+	& + & {
+		@include margin-top-bottom(em(15px));
+		@include pad-left-right(em(3px));
+		min-width: 40px;
+		background: #111;
+		color: #9C2707;
+		border: 1px solid #fff;
+	}
+}

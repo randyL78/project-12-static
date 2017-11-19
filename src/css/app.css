@@ -1,6 +1,6 @@
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
-@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
 html { line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
 body { margin: 0; }
@@ -94,10 +94,10 @@ a { text-decoration: none; }
 
 .grid__row:after { content: ""; display: table; clear: both; }
 
-.nav__link { text-align: center; }
+.nav__link, .controller { text-align: center; }
 
-.nav, .nav--mobile, .grid__row, .grid__row--12 { display: flex; flex-direction: column; }
-@media (min-width: 480px) { .nav, .nav--mobile, .grid__row, .grid__row--12 { flex-direction: row; } }
+.nav, .nav--mobile, .grid__row, .grid__row--12, .channel { display: flex; flex-direction: column; }
+@media (min-width: 480px) { .nav, .nav--mobile, .grid__row, .grid__row--12, .channel { flex-direction: row; } }
 
 #button--scroll, #button--menu { background-color: transparent; cursor: pointer; min-height: 35px; color: #fff9fd; padding-left: 15px; padding-right: 15px; border: none; outline: none; }
 
@@ -106,6 +106,8 @@ a { text-decoration: none; }
 @media (min-width: 768px) { .headline--primary { text-align: left; padding-left: 20px; } }
 
 .headline--secondary { font-weight: 300; font-size: 1.44444em; margin-bottom: 15px; }
+
+.digital, .channel__button { font-family: "Orbitron", sans-serif; text-transform: capitalize; }
 
 .navbar, .navbar--mobile { position: absolute; z-index: 100; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; }
 @media (min-width: 768px) { .navbar, .navbar--mobile { flex-direction: row; justify-content: space-between; align-content: center; padding-left: 15px; padding-right: 15px; } }
@@ -148,6 +150,9 @@ a { text-decoration: none; }
 
 .card { max-width: 1050px; }
 
+.digital + .digital { margin-left: 1em; }
+.digital + .digital { margin-top: 0.83333em; margin-bottom: 0.83333em; padding-left: 0.16667em; padding-right: 0.16667em; min-width: 40px; background: #111; color: #9C2707; border: 1px solid #fff; }
+
 .landing { height: 100vh; width: 100%; background: url(../images/background-large.jpg) fixed; background-position: center top; background-size: cover; }
 
 .nav { display: none; }
@@ -170,11 +175,24 @@ a { text-decoration: none; }
 
 .hidden { transform: translateY(-160px); }
 
-.container { min-height: 100vh; position: relative; padding-top: 2.22222em; color: palette(grey); font-size: 18px; font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 27px; background-color: #83668C; background-image: url(../images/gemini.svg); background-size: 35px 35px; }
+.container { min-height: 100vh; position: relative; padding-top: 0.83333em; color: palette(grey); font-size: 18px; font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 27px; background-color: #83668C; background-image: url(../images/gemini.svg); background-size: 35px 35px; }
 
-.compScreen { margin-left: auto; margin-right: auto; max-width: 1100px; }
+.compWhole { display: flex; margin-left: auto; margin-right: auto; flex-direction: column; max-width: 1100px; }
+@media (min-width: 768px) { .compWhole { flex-direction: row; justify-content: center; align-items: center; } }
 
-#screen { max-height: 96vh; }
+.compScreen { flex-grow: 1; }
+
+#screen { max-height: 60vh; }
+@media (min-width: 768px) { #screen { max-height: 75vh; } }
+@media (min-width: 768px) { #screen { max-height: 85vh; } }
+
+.controller { margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: center; width: 25vh; min-width: 200px; min-height: 150px; background: radial-gradient(#d4d4d4, #c0bfbf, #3e3d3d); border-radius: 25% 25% 65% 65%; box-shadow: 10px 10px 20px 0 #222; }
+
+.display { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; }
+
+.channel__button { border-radius: 5px; background: transparent; outline: none; border: none; }
+.channel__button:hover { background-color: #535252; }
+.channel__button:active { background-color: #240A40; color: #fff9fd; }
 
 .image--profile { position: fixed; left: calc(50vw - 15vh); width: 30.0015vh; height: 45vh; bottom: 3.61111em; }
 @media (min-width: 480px) { .image--profile { bottom: 5.27778em; left: auto; right: 5vw; width: 36.6685vh; height: 55vh; } }

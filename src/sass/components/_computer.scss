@@ -1,9 +1,72 @@
-.compScreen {
-	margin-left: auto;
-	margin-right: auto;
+.compWhole {
+	display: flex;
+	@include margin-left-right(auto);
+	flex-direction: column;	
 	max-width: 1100px;
+	@include mq(medium) {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;		
+	}
+
+}
+
+.compScreen {
+//	@include margin-left-right(auto);
+	flex-grow: 1;
 }
 
 #screen {
-	max-height: 96vh;
+	max-height: 60vh;
+	@include mq(medium) {
+		max-height: 75vh;	
+	}
+	@include mq(medium) {
+		max-height: 85vh;	
+	}
 }
+
+
+.controller {
+	@extend %center-align;
+	@include margin-left-right(auto);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+//	height: 30vh;
+	width: 25vh;
+	min-width: 200px;
+	min-height: 150px;
+	background: radial-gradient(setColor(grey, xx-light), setColor(grey, x-light), setColor(grey, x-dark));
+	border-radius: 25% 25% 65% 65%;
+	box-shadow: 10px 10px 20px 0 #222;
+}
+
+.display {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.channel {
+	@extend %container-flex;
+	@include e(button) {
+		@extend %digital;
+		border-radius: $border--rounded-corners;
+
+		background: transparent;
+		outline: none;
+		border: none;
+		&:hover {
+			background-color: setColor(grey, dark);
+		}
+		&:active {
+			background-color: $color-shadow;
+			color: $color-font-white;
+		}
+	}
+}
+
+
+

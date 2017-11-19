@@ -113,7 +113,6 @@
 %hdln-prim {	
 	@include pad-left-right(em(15px));
 	color: $color-font-white;
-//	font-family: $font-family--accent;
 	font-weight: $font-weight--medium;
   font-size: em(28px);
 	@include margin-top-bottom(em(5px));
@@ -132,6 +131,13 @@
   font-weight: $font-weight--light;
 	font-size: em(26px);
 	margin-bottom: 15px;
+}
+
+// =============== Digital looking typography ==
+
+%digital {
+	font-family: $font-family--digital;
+	text-transform: capitalize;
 }
 
 // =============== Nav Items ====================

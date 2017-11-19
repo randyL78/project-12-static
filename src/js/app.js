@@ -106,8 +106,56 @@ document.addEventListener('DOMContentLoaded', function () {
 		
 	};
 	
+// ************************************************************
+//				Controller
+// ************************************************************
+	const prevButton = document.getElementById("project--prev");
+	const nextButton = document.getElementById("project--next");
+	const numberDisplay = document.getElementById("project--number");
+	const projectScreen = document.getElementById("project--screen");
 	
-
+	let projectNumber = parseInt(numberDisplay.textContent);
+	
+	function setProject() {
+		if (projectNumber > 11) {projectNumber = 1;}
+		if (projectNumber < 1) {projectNumber = 11;}
+	
+		numberDisplay.textContent = projectNumber;
+		projectScreen.setAttribute("xlink:href", "./images/Project" + projectNumber + ".png");		
+	}
+	
+	// select next project
+	nextButton.onclick = () => {
+		projectNumber++;
+		setProject();
+	};
+	// select previous project
+	prevButton.onclick = () => {
+		projectNumber--;
+		setProject();
+	};	
+	
+	
+	
 	
 	
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
