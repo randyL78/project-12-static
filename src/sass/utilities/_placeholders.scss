@@ -99,6 +99,10 @@
 %links {
 	text-decoration: none;  //	Remove Underlines
 	color: $color-shadow;
+	padding: em(5px) em(15px);
+	&:hover {
+		background: setColor(primary, x-light);
+	}
 }
 
 // =============== Images =======================

@@ -16,7 +16,7 @@
 <!--				Mobile navigation menu-->
 			<nav class="navbar--mobile">
 				<button id="button--menu"></button>
-				<ul class="nav--mobile hidden">
+				<ul class="nav--mobile collapsed">
 					<li class="nav__item"><a href="index.html" class="nav__link selected">Home</a></li>
 					<li class="nav__item"><a href="#" class="nav__link">Experience</a></li>
 					<li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
@@ -184,7 +184,16 @@
 					<button class="channel__button" id="project--info">Info</button>			
 			</div>				
 		</div>
-
+<!--  modal    -->
+		<div class="overlay hidden">
+			<div class="modal">
+				<div class="modal__container">
+					<h2>Attention!</h2>
+					<p>This is a test modal</p>
+				</div>
+				<button class="btn--modal" id="modal-close">Close</button>
+			</div>
+		</div>
 
 	</main>
 <!--

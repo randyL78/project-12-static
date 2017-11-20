@@ -1,0 +1,44 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba($color-shadow, .5);
+	z-index:  map-get($z-index, pop-up);
+	@include mq(medium) {
+		background-color: rgba($color-shadow, .2);		
+	}
+
+}
+
+
+.modal {
+	position: fixed;
+	top: 5vh;
+	width: 100%;
+	background-color: setColor(primary, xx-light);
+	text-align: center;
+	border: $border--thick;
+	z-index:  map-get($z-index, pop-up);
+	max-height: 85vh;
+	overflow-y: auto;
+	@include mq(medium) {
+		top: 15vh;
+		width: 500px;
+		left: 50vw;
+		transform: translateX(-250px);
+		box-shadow: 0 0 50px 30px $color-shadow;
+	}
+	.btn--modal {
+		@extend %button;
+		width: 175px;
+		background-color: $color-shadow;
+	}	
+	
+}
+
+
+
+
+
