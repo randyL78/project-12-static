@@ -127,7 +127,6 @@
 		text-align: left;
 		padding-left: 20px;
 	}
-
 }
 
 %hdln-sec {
@@ -162,10 +161,23 @@
 	}
 }
 
+%nav-mobile {
+	width: 100%;
+	background: $color-shadow;
+	transition: transform .4s ease-in;
+}
+
 %nav-ul {
 	@extend %container-flex;
 	padding-left: 0;
 	margin: auto 0;
+	@include mq(small) {
+		display: flex;
+		justify-content: center;
+	}
+	@include mq(medium) {
+		order: 2;
+	}
 }
 
 %nav-item-link {

@@ -3,7 +3,6 @@
 // ==========================================================================
 
 // Center elements
-
 .centered {
 	@include mq(medium) {
 		margin-left: auto;
@@ -11,33 +10,56 @@
 	}
 }
 
+.content {
+	height: 100vh;
+	width: 100%;
+	background: url(../images/background-large.jpg) fixed;
+	background-position: center top;
+	background-size:  cover;
+	padding-top: em(105px);
+	@include mq(small) {
+		padding-top: em(165px);		
+		@include pad-left-right(em(25px));
+		}
+	@include mq(medium) {
+		padding-top: em(125px);		
+		@include pad-left-right(em(50px));
+	}
+
+}
 
 // Create grid rows
 .grid {
-	&__row {		// .grid__row
+	@extend .centered;
+	background-color: rgba(setColor(primary, xx-light), .6);
+	color: palette(grey);
+	font-size: $base__font-size;
+	font-family: $font-family--primary;
+	line-height: ($base__line-height * $base__font-size);
+	padding: 20px 20px;
+	@include mq(small) {
+		box-shadow: 0 0 85px 15px #fff inset;
+		border-radius: $border--rounded-corners;
+		border: $border--thick;
+
+	}
+
+	@include mq(large) {
+		max-width: $pg-max-w;
+	}
+	
+	@include e(row) {		// .grid__row
 		@include pad-top-bottom(15px);
 		@include container-flex-between;
 		@extend %clearfix;
 		@extend .centered;
 		width: 100%;
-
-		&--12 {		// .grid__row--12
-			@include pad-left-right(5px);
-			@include container-flex-between;
-		}
-		// Set max-width for grid container
-		@include mq(large) {
-			max-width: $g-cont-max-w;
-		}
 	}
-}
-
-
-
-// create grid columns
-.grid__col {
-	@include mq(medium) {
-		@include g-columns;
+	@include e(col) {
+		@include mq(medium) {
+			// create grid columns
+			@include g-columns;
+		}	
 	}
 }
 

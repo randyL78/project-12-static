@@ -1,27 +1,20 @@
 .nav { 		// ul
 	@extend %nav-ul;
 	display: none;
-
-	
 	@include mq(small) {
 		display: flex;
-		justify-content: center;
-
 	}
-	@include mq(medium) {
-		order: 2;
-	}
-	
 	@include m(mobile) { // mobile ul
 		@extend %nav-ul;
-		width: 100%;
+		@extend %nav-mobile;
 		position: absolute;
 		top: 35px;
-		background: $color-shadow;
-		transition: transform .4s ease-in;
 		@include mq(small) {
 			display: none;
 		}
+		.navbar--sticky & {
+			top: 85px;
+		} 
 	}
 	
 	&bar {  // nav element
@@ -33,9 +26,37 @@
 		@include m(mobile) { // mobile nav element			
 			@extend %nav-bar;	
 			background: $color-shadow;
-
 			@include mq(small) {
 				display: none;
+			}
+		}
+		@include m(sticky) { // navbar-sticky
+			@extend %nav-bar;
+			@extend %nav-mobile;	
+			position: fixed;
+			@include mq(small) {
+				background: setColor(primary, dark);		
+				box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;				
+			}
+			& .headline--primary { // navbar-sticky headlines
+				@include margin-top-bottom (0);
+				@include pad-top-bottom (em(10px));
+				position: relative;
+				z-index: (map-get($z-index, menu) + 1 );
+				background: setColor(primary, dark);		
+				box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;
+				@include mq(small) { 
+					background: transparent;
+					box-shadow: none;
+				}			
+			}
+			& .nav--mobile {
+				@include mq(small) {
+					display: flex;
+					position: initial;
+					background: transparent;
+					width: initial;
+				}
 			}
 		}
 	}
@@ -53,17 +74,16 @@
 			@extend %nav-item-on;
 		}
 	}	
-	& .selected {
+	&__item .selected {
 		@extend %nav-item-on;
 	}
+
 }
 
 .sticky {
 	position: fixed;
 	top: 0;
 	bottom: auto;
-//	box-shadow: 0 0 45px inset #000;
-
 }
 
 // button to scroll down to portfolio
@@ -78,7 +98,10 @@
 		@extend %button-navs;
 		background: url(../images/icon-menu.svg) center no-repeat $color-shadow;
 		z-index: map-get($z-index, menu);
-				&:active {
+		@include mq(small) {
+			display: none;		
+		}
+		&:active {
 			background-color: setColor(primary, dark);
 		}
 	}
@@ -90,5 +113,9 @@
 
 .collapsed {
 	transform: translateY(-160px);
+	@include mq(small) {
+		transition: none;
+		transform: translateY(0);	
+	}
 }
 

@@ -76,25 +76,36 @@ const imageURL = "./images/";
 	const portfolio = document.getElementById("portfolio");
 	let scrolled = false;
 	
-	
-	scrollButton.onclick = () => {
-		if (scrolled) {
-			window.scrollTo(0,0);
-			scrollButton.classList.remove("flip");
-		} else {
-			let stickyHeight = getStickyPoint();
-			window.scrollTo(0, stickyHeight);
-			scrollButton.classList.add("flip");
-		}
-		scrolled = !scrolled;		
-	};
-	
-	
-	// ======= sticky nav
-	window.onscroll = () => {
-		stickyScroller();
-	};
-	
+	// avoid undefined error for experince.html page that doesn't have a scroll button 
+	if (scrollButton !== null) {
+		scrollButton.onclick = () => {
+			if (scrolled) {
+				window.scrollTo(0,0);
+				scrollButton.classList.remove("flip");
+			} else {
+				let stickyHeight = getStickyPoint();
+				window.scrollTo(0, stickyHeight);
+				scrollButton.classList.add("flip");
+			}
+			scrolled = !scrolled;		
+		};
+		
+		// ======= sticky scrolling nav
+		window.onscroll = () => {
+			stickyScroller();
+		};
+		
+		window.onresize = () => {
+			// for performance reasons add a delay before firing
+			// reset existing timeout first to avoid multiple fires
+			clearTimeout(resizeTimer);
+
+			// initialize timeout
+			resizeTimer = setTimeout( () => {stickyScroller();}, 50); 
+
+		};
+		
+	}
 	function stickyScroller () {
 		let stickyHeight = getStickyPoint();
 		
@@ -118,15 +129,7 @@ const imageURL = "./images/";
 	// ========= reset scroller/nav positions after user resizes window 
 	let resizeTimer;
 	
-	window.onresize = () => {
-		// for performance reasons add a delay before firing
-		// reset existing timeout first to avoid multiple fires
-		clearTimeout(resizeTimer);
-		
-		// initialize timeout
-		resizeTimer = setTimeout( () => {stickyScroller();}, 50); 
-		
-	};
+
 	
 // ************************************************************
 //				Controller
@@ -153,26 +156,29 @@ const imageURL = "./images/";
 	
 	
 	// ============ Event handlers
-	// select next project
-	nextButton.onclick = () => {
-		projectNumber++;
-		setProject();
-	};
 	
-	// select previous project
-	prevButton.onclick = () => {
-		projectNumber--;
-		setProject();
-	};	
-	
-	// use a modal to display more information about a project
-	infoButton.onclick = () => {
-		if (modalOverlay.classList.contains("hidden")) {
-			modalOverlay.classList.remove("hidden");
-			addModalContent();
-		}
-	};
-	
+	// check to see if there is a need for a modal, if not don't add evenlisteners to avoid null references
+	if (modalOverlay !== null) {
+		// select next project
+		nextButton.onclick = () => {
+			projectNumber++;
+			setProject();
+		};
+
+		// select previous project
+		prevButton.onclick = () => {
+			projectNumber--;
+			setProject();
+		};	
+
+		// use a modal to display more information about a project
+		infoButton.onclick = () => {
+			if (modalOverlay.classList.contains("hidden")) {
+				modalOverlay.classList.remove("hidden");
+				addModalContent();
+			}
+		};
+	}
 	
 // ************************************************************
 //				Modal
@@ -212,18 +218,13 @@ const imageURL = "./images/";
 //		}
 //	}
 
-	
-	// close the modal
-	modalClose.onclick = () => {
-		modalOverlay.classList.add("hidden");	
-	};
-	
-	// prevent mouse wheel scrolling with modal open and touchpad scrolling
-//	window.onwheel = (e) => handleScrollPrevention(e);
-//	window.onmousewheel = (e) => handleScrollPrevention(e);
-//	window.ontouchmove = (e) => handleScrollPrevention(e);
-//	
-
+	// check to see if there is a need for a modal, if not don't add evenlisteners to avoid null references
+	if (modalOverlay !== null) {
+		// close the modal
+		modalClose.onclick = () => {
+			modalOverlay.classList.add("hidden");	
+		};
+	}
 
 
 // ************************************************************
