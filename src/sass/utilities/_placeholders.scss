@@ -143,6 +143,13 @@
 	text-transform: capitalize;
 }
 
+// ============== Gradients =====================
+
+// Gradient for nav bars 
+%gradient {
+		background: linear-gradient(to bottom, setColor(primary, xx-dark) 0%, setColor(primary, dark) 45%, setColor(primary, dark) 55%, setColor(primary, xx-dark) 100%);
+}
+
 // =============== Nav Items ====================
 
 %nav-bar {
@@ -189,6 +196,7 @@
 	color: $color-font-lighter;
 	font-size: em(20px);
 	display: block;
+	margin-top: em(4px);
 	padding: em(12px) em(18px);
 	border-radius: $border--rounded-corners;
 	@include mq(small) {

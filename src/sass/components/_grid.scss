@@ -5,18 +5,17 @@
 // Center elements
 .centered {
 	@include mq(medium) {
-		margin-left: auto;
-		margin-right: auto;
+		@include margin-left-right(auto);
 	}
 }
 
 .content {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
-	background: url(../images/background-large.jpg) fixed;
+	background: $background;
 	background-position: center top;
 	background-size:  cover;
-	padding-top: em(105px);
+	padding-top: em(145px);
 	@include mq(small) {
 		padding-top: em(165px);		
 		@include pad-left-right(em(25px));
@@ -31,21 +30,22 @@
 // Create grid rows
 .grid {
 	@extend .centered;
-	background-color: rgba(setColor(primary, xx-light), .6);
+	background-color: rgba(setColor(primary, xx-light), .8);
 	color: palette(grey);
 	font-size: $base__font-size;
 	font-family: $font-family--primary;
 	line-height: ($base__line-height * $base__font-size);
 	padding: 20px 20px;
-	@include mq(small) {
-		box-shadow: 0 0 85px 15px #fff inset;
-		border-radius: $border--rounded-corners;
-		border: $border--thick;
-
-	}
+	border-radius: $border--rounded-corners;
+	border: $border--thick;
+	box-shadow: 0 0 85px 15px #fff inset;
 
 	@include mq(large) {
 		max-width: $pg-max-w;
+	}
+	
+	& + & {
+		margin-top: em(45px);
 	}
 	
 	@include e(row) {		// .grid__row

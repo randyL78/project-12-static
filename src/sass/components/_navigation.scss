@@ -19,10 +19,9 @@
 	
 	&bar {  // nav element
 		@extend %nav-bar;
-		background: setColor(primary, dark);		
+		@extend %gradient;
 		z-index: map-get($z-index, menu);
 		bottom: 0;		
-		box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;
 		@include m(mobile) { // mobile nav element			
 			@extend %nav-bar;	
 			background: $color-shadow;
@@ -35,17 +34,16 @@
 			@extend %nav-mobile;	
 			position: fixed;
 			@include mq(small) {
-				background: setColor(primary, dark);		
-				box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;				
+				background: linear-gradient(to bottom, setColor(primary, xx-dark) 0%, setColor(primary, dark) 45%, setColor(primary, dark) 55%, setColor(primary, xx-dark) 100%);
 			}
 			& .headline--primary { // navbar-sticky headlines
 				@include margin-top-bottom (0);
 				@include pad-top-bottom (em(10px));
 				position: relative;
 				z-index: (map-get($z-index, menu) + 1 );
-				background: setColor(primary, dark);		
-				box-shadow: 0 0 45px 12px setColor(primary, xx-dark) inset;
+				@extend %gradient;
 				@include mq(small) { 
+					@include pad-top-bottom (em(5px));					
 					background: transparent;
 					box-shadow: none;
 				}			
@@ -74,7 +72,7 @@
 			@extend %nav-item-on;
 		}
 	}	
-	&__item .selected {
+	&__item .selected {  //nav--links that are selected
 		@extend %nav-item-on;
 	}
 
