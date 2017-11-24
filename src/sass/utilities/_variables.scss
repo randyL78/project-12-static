@@ -40,15 +40,19 @@ $grey		: #676666;
 
 $trendy-pink	: #83668C;
 $violet 			: #240A40;
+$royal-blue		: #3A67EB;
+$eucalyptus		: #1E8048;
 
 
 //		Colors by usage
 $color-primary		: $trendy-pink;
 $color-shadow			: $violet;
+$color-accent			: $eucalyptus;
+$color-compliment	: $royal-blue;
 $html							: #EB4500;
-$css							: #3A67EB;
+$css							: $royal-blue;
 $js								: #D8C212;
-$design						: #1E8048;
+$design						: $eucalyptus;
 
 
 
@@ -126,7 +130,7 @@ $pg-max-w	: 1200px;
 
 // ============== CSS Transitions ===================
 
-$trns--duration-fast	: 0.4s ease-in;
+$trns--duration-fast	: 0.3s ease-in;
 $trns--duration-slow	: 0.8s ease-in-out;
 
 // ============== Layering ==========================

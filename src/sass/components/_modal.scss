@@ -25,22 +25,44 @@
 	max-height: 85vh;
 	overflow-y: auto;
 	@include mq(medium) {
+		@include pad-left-right(em(25px));
 		top: 15vh;
 		width: 500px;
 		left: 50vw;
 		transform: translateX(-250px);
 		box-shadow: 0 0 50px 30px $color-shadow;
 	}
-	.btn--modal {
+	
+	@include e(button) {
 		@extend %button;
+
 		width: 175px;
 		background-color: $color-shadow;
-		margin-bottom: em(10px);
-	}	
+		margin-bottom: em(10px);	
+		&:hover {
+			@extend %nav-item-on;
+		}
+		&:active {
+			@extend %nav-item-active;
+		}
+		@include m(container) {
+			@extend %container-flex;
+			justify-content: space-between;
+		}
+		@include m(prev) {
+			@extend %button-round;
+		}
+		@include m(next) {
+			@extend %button-round;
+		}
+
+	}
 	
+	@include m(description) {
+		text-align: justify;
+	}
+
+			
 }
-
-
-
 
 

@@ -29,7 +29,6 @@
 			@include pad-left-right(50px);
 		}
 		
-
 	}
 	
 	& .headline--secondary {
@@ -39,12 +38,15 @@
 
 .social {
 	@include margin-left-right(auto);
-	width: 175px;
+	width: 180px;
 	@include m(link) {
 		@extend .link;
 		display: block;
 		text-align: left;
 		font-size: em(24px);
+		& span{
+			padding-left: .25em;
+		}
 	}	
 }
 
