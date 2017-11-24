@@ -12,14 +12,13 @@
 }
 
 .compScreen {
-//	@include margin-left-right(auto);
 	flex-grow: 1;
 }
 
 #screen {
 	max-height: 60vh;
 	@include mq(medium) {
-		max-height: 75vh;	
+		max-height: 75vh;
 	}
 	@include mq(medium) {
 		max-height: 85vh;	
