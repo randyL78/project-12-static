@@ -1,0 +1,23 @@
+[class^="grid__col--"] {
+	.experience & + & {
+		border-left: 8px solid $color-shadow;
+		border-radius: 15px;
+		padding-left: em(20px);
+		margin-bottom: 1em;
+	}
+}
+
+.institution {
+	@extend %hdln-ter;
+}
+
+.date {
+	@extend %hdln-ter;
+}
+
+.major {
+	@include margin-top-bottom(0);
+	font-weight: $font-weight--bold;
+	color: lighten($color-shadow, 12%);
+}
+

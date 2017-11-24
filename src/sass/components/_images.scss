@@ -35,21 +35,6 @@
 // =======================
 // Keyframes declarations
 //========================
-@-webkit-keyframes appear-grow {
-	0% {
-		-webkit-transform: scale(0);
-		        transform: scale(0);
-	}
-	40% {
-		-webkit-transform: scale(1.05);
-		        transform: scale(1.05);		
-	}
-	80% {		
-		-webkit-transform: scale(0.95);		
-		        transform: scale(0.95);
-		
-	}	
-}
 @keyframes appear-grow {
 	0% {
 		transform: scale(0);
@@ -118,15 +103,28 @@
 
 
 
-// add the correct gradient to each star
+// add the correct gradient and animation to each star
+[class^=star] {
+	-webkit-animation: appear-grow 1.0s ease-in-out backwards;
+	animation: appear-grow 1.0s ease-in-out backwards;	
+}
+
 @for $i from 1 through 10 {
 	.star#{$i} {
 		fill:url(#star#{$i}--grad);
-		-webkit-animation: appear-grow 1.0s ease-in-out backwards;
-		animation: appear-grow 1.0s ease-in-out backwards;
 		animation-delay: (#{$i * .25}s);
 	}
 }
 
-				
+// sprite sheet icons
+.icon {
+	transform: translateY(.125em);
+	height: 1em;
+	width: 1em;
+	fill: $color-shadow;	
+}
+
+
+
+
 

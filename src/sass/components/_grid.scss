@@ -19,7 +19,7 @@
 	@include mq(small) {
 		padding-top: em(165px);		
 		@include pad-left-right(em(25px));
-		}
+	}
 	@include mq(medium) {
 		padding-top: em(125px);		
 		@include pad-left-right(em(50px));
@@ -31,7 +31,7 @@
 .grid {
 	@extend .centered;
 	background-color: rgba(setColor(primary, xx-light), .8);
-	color: palette(grey);
+	color: map-get(map-get($color-palettes,grey), x-dark);
 	font-size: $base__font-size;
 	font-family: $font-family--primary;
 	line-height: ($base__line-height * $base__font-size);
@@ -39,24 +39,35 @@
 	border-radius: $border--rounded-corners;
 	border: $border--thick;
 	box-shadow: 0 0 85px 15px #fff inset;
+	transition: background-color $trns--duration-fast;
 
 	@include mq(large) {
 		max-width: $pg-max-w;
 	}
-	
+	&:hover {
+		background-color: rgba(setColor(primary, xx-light), 1);	
+	}
 	& + & {
 		margin-top: em(45px);
 	}
 	
 	@include e(row) {		// .grid__row
-		@include pad-top-bottom(15px);
 		@include container-flex-between;
 		@extend %clearfix;
 		@extend .centered;
 		width: 100%;
+		@include mq(medium) { 
+			@include pad-left-right(50px);
+		}
+		& + & {
+			border-top: $border--thick;
+			@include mq(small) {
+				border-top: none;
+			}
+		}
 	}
 	@include e(col) {
-		@include mq(medium) {
+		@include mq(small) {
 			// create grid columns
 			@include g-columns;
 		}	
@@ -66,9 +77,8 @@
 // Column styles
 	// Select any class beginning with grid__col--
 [class^="grid__col--"] {
-	border-radius: $border--rounded-corners;
-	padding: em(8px) em(10px);
-	@include margin-top-bottom(em(5px));
+	padding: 0 em(10px);
+	@include margin-top-bottom(em(10px));
 	@include mq(medium) { 
 		@include doubly(percentage($g-gutter-width / $context));
 		min-height: 1px;

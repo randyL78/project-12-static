@@ -45,6 +45,10 @@ $violet 			: #240A40;
 //		Colors by usage
 $color-primary		: $trendy-pink;
 $color-shadow			: $violet;
+$html							: #EB4500;
+$css							: #3A67EB;
+$js								: #D8C212;
+$design						: #1E8048;
 
 
 
@@ -67,7 +71,13 @@ $color-palettes: (
 		base     : $grey,
 		dark     : darken($grey, 8%),
 		x-dark   : darken($grey, 16%)
-    )
+    ),
+	skill: (
+		$html,						
+		$css,					
+		$js,								
+		$design			
+	)
 );
 
 
@@ -87,7 +97,7 @@ $ui-colors: (
 
 // ============= Borders ===========================
 $border--round						: 50%;
-$border--rounded-corners	: 5px;
+$border--rounded-corners	: 10px;
 $border--pill							: 25px;
 $border--theme						: 1px solid $color-font-lighter;
 $border--thick						: 3px solid $color-font-light;
@@ -108,6 +118,7 @@ $g-col-width    : 65px;
 $g-gutter-width : 20px;
 $g-col-count    : 12;
 $g-cont-max-w   : 1200px;
+$context				: g-context($g-col-width, $g-col-count ,$g-gutter-width);
 
 // ============== Page Width =======================
 

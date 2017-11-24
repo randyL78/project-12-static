@@ -1,0 +1,52 @@
+.grid__col--3 {
+	.skill & {
+		$target: ($g-col-width * 3) + ($g-gutter-width * (3 - 1));
+		@include mq(small) {
+			width: percentage(($target * 2) / $context);
+		}
+		@include mq(large) {
+			width: percentage(($target) / $context);	
+		}
+	}
+	.skill & + & {
+		border-top: $border--thick;
+		@include mq(small) {			
+			border-top: none;		
+		}		
+	}
+}
+
+
+.skill { // grid container
+	& .grid__row {
+		@include mq(small) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	
+	}
+	
+	@include e(main) {
+		@include skill-colors(map-get($color-palettes, skill));				
+	}
+	
+	@include e(list) {
+		margin-top: 0;
+	}
+	@include e(item) {
+		text-align: center;		
+	}
+
+}
+
+	[class^="skill__main"] {
+		
+		text-align: center;
+		margin-bottom: em(5px);
+		@include pad-top-bottom(em(5px));
+		border-radius: $border--pill;
+		border: 3px solid setColor(grey, xx-light);
+		box-shadow: 3px 3px 8px 3px rgba(255, 255, 255, .5) inset, -3px -3px 8px 3px rgba(25, 25, 25, .5) inset;
+		color: $color-font-white;
+	}
+

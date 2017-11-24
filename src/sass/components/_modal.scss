@@ -14,6 +14,7 @@
 
 
 .modal {
+	@include pad-left-right(em(10px));
 	position: fixed;
 	top: 5vh;
 	width: 100%;
@@ -34,6 +35,7 @@
 		@extend %button;
 		width: 175px;
 		background-color: $color-shadow;
+		margin-bottom: em(10px);
 	}	
 	
 }

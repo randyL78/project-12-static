@@ -6,7 +6,7 @@
 	min-height: 100vh;
 	position: relative;
 	padding-top: em(15px);
-	color: palette(grey);
+	color: map-get(map-get($color-palettes,grey), x-dark);
 	font-size: $base__font-size;
 	font-family: $font-family--primary;
 	line-height: ($base__line-height * $base__font-size);

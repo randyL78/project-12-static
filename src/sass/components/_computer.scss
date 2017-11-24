@@ -53,6 +53,7 @@
 	@extend %container-flex;
 	@include e(button) {
 		@extend %digital;
+		cursor: pointer;
 		border-radius: $border--rounded-corners;
 
 		background: transparent;

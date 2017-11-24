@@ -146,6 +146,16 @@
 	margin-bottom: $bottom;
 }
 
-
+// Skill pills background colors
+@mixin skill-colors($map) {
+	// $map = which color map to sort through	
+	$i : 1; // temporary increment variable
+	@each $color in $map {
+		@include m("#{$i}") {
+   		background-color: $color;
+    }
+		$i : $i + 1;
+  }
+}
 
 

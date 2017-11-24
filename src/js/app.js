@@ -42,7 +42,7 @@ const imageURL = "./images/";
 		this.skills = skills;
 		this.url = url;
 		this.image = () => {
-			 return (imageURL + "Project" + this.number + ".png");
+			 return (imageURL + "Project" + this.number + ".jpg");
 			};
 	}
 	

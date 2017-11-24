@@ -1,0 +1,57 @@
+.contact {
+	@extend .centered;
+	display: flex;
+	max-width: 1400px;
+	flex-direction: column;
+	@include mq(medium) {
+		flex-direction: row;
+	}
+	
+	@include e(container) {
+		width: 100%;
+		text-align: center;
+		@include mq(medium) {
+		@include pad-left-right(25px);
+		width: 63%;
+		}
+		@include mq(large) {
+			@include pad-left-right(50px);
+		}
+	}
+	@include e(sidebar) {
+		width: 100%;
+		text-align: center;
+		@include mq(medium) {
+			@include pad-left-right(25px);
+			width: 33%;
+		}
+		@include mq(large) {
+			@include pad-left-right(50px);
+		}
+		
+
+	}
+	
+	& .headline--secondary {
+		text-align: center;
+	}
+}
+
+.social {
+	@include margin-left-right(auto);
+	width: 175px;
+	@include m(link) {
+		@extend .link;
+		display: block;
+		text-align: left;
+		font-size: em(24px);
+	}	
+}
+
+.grid {
+	.contact & + & {
+		@include mq(medium) {
+			margin-top: 0;
+		}
+	}
+}
