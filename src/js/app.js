@@ -35,10 +35,10 @@ const imageURL = "./images/";
 	
 	
 	// Project constructor
-	function project(number, title, desription, skills, url) {
+	function Project(number, title, desription, skills, url) {
 		// Check to ensure project was initialized with new keyword	
 		/* jshint validthis: true */
-		if (this instanceof project) {
+		if (this instanceof Project) {
 			this.key = projectKey;
 			projectKey ++;
 			this.number = number;
@@ -51,7 +51,7 @@ const imageURL = "./images/";
 			};
 			// if it wasn't initialized with the new keyword, self initialize
 		} else {
-			return new project(number, title, desription, skills, url);
+			return new Project(number, title, desription, skills, url);
 		}
 	}
 // IE Work around for computer svg
@@ -265,54 +265,54 @@ const imageURL = "./images/";
 // ************************************************************
 	const projects = [];
 	const webURL = "randylayne.com/Techdegree-Projects/";
-	projects.push(new project(1, 
+	projects.push(new Project(1, 
 														"Personal Profile",
 													 	"In this project we take a given template and customize placeholder text and edit styles to match with our own goals and personalities. We also learned the power of anchors to link to different areas both in our own website and to other websites.",
 													 	["HTML", "CSS", "Git"],
-													 	webURL + "Profile"));
-	projects.push(new project(2, 
+													 	webURL + "Profile-Page/"));
+	projects.push(new Project(2, 
 														"Responsive Layout",
 													 	"When preparing to do this project, the main focus of the courses we were taking was a mobile first approach to building a website. Specifically, we learned to format the head of HTML documents for mobile devices and how to use min-width media queries to adjust our layout for different screen sizes.",
 													 	["HTML", "CSS"],
 													 	webURL + "Responsive-Layout/"));
-	projects.push(new project(3, 
+	projects.push(new Project(3, 
 														"Online Registration Form",
 													 	"This project is all about being able to structure a web form to have a consistent cross-browser look, as well as utilizing HTML5 validation features.",
 													 	["HTML", "CSS"],
 													 	webURL + "Online-Registration-Form/"));
-	projects.push(new project(4, 
+	projects.push(new Project(4, 
 														"Interactive Photo Gallery",
 													 	"The Interactive Photo gallery was an introduction to adding interactivity to websites, with the related courses covering the basics of Javascript, and the utilization of the JQuery library. It also interacts with third party libraries, like lightbox.js, and configuring them to work properly. Finally, there is a fully functional search bar that was added to filter out the photos being viewed that was written in pure Javascript.",
 													 	["HTML", "CSS", "Javascript", "jQuery", "Plugins"],
 													 	webURL + "Interactive-Photo-Gallery/"));	
-	projects.push(new project(5, 
+	projects.push(new Project(5, 
 														"Web Style Guide",
 													 	"This project represents the start of a front-end framework and is built using SASS to style and compile the CSS. It utilizes a modular approach to styling and has reusable components that were integrated in many projects since. The project also uses BEM naming conventions and descriptive class targeting for styles.",
 													 	["HTML", "CSS", "SASS", "BEM"],
 													 	webURL + "Web-Style-Guide/"));
-	projects.push(new project(6, 
+	projects.push(new Project(6, 
 														"Interactive Video Player",
 													 	"Here, a custom Javascript skin was developed for HTML media tags that would deliver a consistent look across multiple browsers. Additional interaction was coded that allows users to view a transcript that is highlighted as the instructor in the video speaks. The transcript can also  be clicked on to transport the user to the corresponding point in the video.",
 													 	["HTML", "CSS", "Javascript", "Media"],
 														webURL + "Interactive-Video-Player/"));
-	projects.push(new project(7, 
+	projects.push(new Project(7, 
 														"SVG Site Update",
 													 	"In this project, a site previously built using PNGs was updated to use SVGs. The project made use of all the major ways of incorporating SVGs into websites: adding it to the CSS as a background, inline SVGs, and utilizing a SVG sprite map for navigation icons. Interactivity was also added in the form of SVG animations and music which plays when a Corgi is hovered over.",
 													 	["HTML", "CSS", "SVG", "Design", "Media"],
 														webURL + "SVG-Site_Update/"));
-	projects.push(new project(8, 
+	projects.push(new Project(8, 
 														"Game Show App",
-													 	"This project is all about Javascript. It creates a phrase guessing game that implements interactivity through the adding and removing of classes and listening to event handlers like mouse clicks and keyboard presses. It also introduces CSS variables that help add some of the benefits of SASS for smaller projects that would not require a full functioned preprocessor.",
+													 	"This project is all about Javascript. It creates a phrase guessing game that implements interactivity through the adding and removing of classes and listening to event handlers like mouse clicks and keyboard presses. It also introduces CSS variables that help add some of the benefits of SASS for smaller projects that would not require a fully functional preprocessor.",
 													 	["Javascript", "CSS"],
 													 	webURL + "Game-Show-App/"));
-	projects.push(new project(9, 
+	projects.push(new Project(9, 
 														"Web App Dashboard",
-													 	"The Web Dash APP projects combines most elements of previous projects and introduces concepts like local storage for user to save their preferences and integrates the chart displaying library charts.js. It also builds on the concepts of modular design by treating different sections of the site as widgets.",
+													 	"The Web Dash APP project combines most elements of previous projects and introduces concepts such as local storage for users to save their preferences and integrates the chart displaying library Charts.js. It also builds on the concepts of modular design by treating different sections of the site as widgets.",
 													 	["HTML", "CSS", "Javascript", "Widgets", "LocalStorage"],
 														webURL + "Web-App-Dashboard/"));
-	projects.push(new project(10, 
+	projects.push(new Project(10, 
 														"Employee Directory",
-													 	"For the Employee Directory demo an API was implemented using an AJAX request and then parsing the returned JSON object into data we could use to generate random “employees” when the browser loads. It also adds HTML dynamically in the Javascript using string literal syntax. It also has a fully functional modal window that displays additional information about each “employee” and can navigate through each without closing the modal.",
+													 	"For the Employee Directory demo an API was implemented using an AJAX request and then parsing the returned JSON object into data we could use to generate random “employees” when the browser loads. Additionally, it adds HTML dynamically in the Javascript using string literal syntax. It also has a fully functional modal window that displays additional information about each “employee” and can navigate through each without closing the modal.",
 													 	["HTML", "CSS", "Javascript", "AJAX", "JSON"],
 														webURL + "Employee-Directory/"));
 	
