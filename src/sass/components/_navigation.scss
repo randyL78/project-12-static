@@ -6,8 +6,8 @@
 	}
 	@include m(mobile) { // mobile ul
 		@extend %nav-ul;
-		@extend %nav-mobile;
-		position: absolute;
+		@extend %nav-mobile; 
+		position: absolute; 
 		top: 35px;
 		@include mq(small) {
 			display: none;
@@ -92,11 +92,11 @@
 			background-color: $color-shadow;
 		}
 	}	
-	@include m(menu) {
+	@include m(menu) { // #button--menu
 		@extend %button-navs;
 		background: url(../images/icon-menu.svg) center no-repeat $color-shadow;
 		z-index: map-get($z-index, menu);
-		@include mq(small) {
+		@include mq(small) { 
 			display: none;		
 		}
 		&:active {

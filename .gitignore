@@ -1,2 +1,6 @@
 
 src/.sass-cache/
+.sass-cache/
+node_modules/
+dist/_notes/
+*.xml

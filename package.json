@@ -1,0 +1,35 @@
+{
+  "name": "project-portfolio",
+  "version": "1.0.0",
+  "description": "The capstone project for Treehouse FEWD Techdegree and  also the portfolio of online projects for Randy Layne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src --minified --compact --comments=false -d dist",
+    "minifyhtml": "htmlmin -o dist/index.html src/index.html",
+    "sass": "sass --watch src/sass:src/css",
+    "minifysass": "sass src/sass/app.scss dist/css/app.min.css --style compressed",
+    "uglify": "uglifyjs dist/js/app.js -m -c -o dist/js/app.min.js",
+    "build": "npm run babel && npm run uglify && rm dist/js/app.js && npm run minifysass",
+    "start": "http-server dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randyL78/project-12-static.git"
+  },
+  "keywords": [],
+  "author": "Randy Layne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randyL78/project-12-static/issues"
+  },
+  "homepage": "http://randylayne.com",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "html-minifier": "^3.5.7",
+    "html-minifier-cli": "^0.1.0",
+    "uglify-js": "^3.2.0",
+    "http-server": "^0.10.0"
+  }
+}
